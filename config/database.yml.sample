@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  <% if ENV["DB_HOST"] %>
+  host: <%= ENV["DB_HOST"] %>
+  username: postgres
+  password: postgres
+  <% end %>
+
+
+development:
+  <<: *default
+  database: peace_boilerplate_development
+
+test:
+  <<: *default
+  database: peace_boilerplate_test
+
+production:
+  <<: *default
+  database: peace_boilerplate_production
+  username: peace_boilerplate
+  password: <%= ENV["PEACE_BOILERPLATE_DATABASE_PASSWORD"] %>

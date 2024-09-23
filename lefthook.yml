@@ -1,0 +1,20 @@
+commit-msg:
+  commands:
+    lint-commit-msg:
+      run: ruby .hooks/lint_commit_msg.rb
+
+pre-commit:
+  commands:
+    frontend-linter:
+      run: yarn lint:js
+    backend-linter:
+      run: bundle exec rubocop --force-exclusion {staged_files}
+    frontend-style:
+      run: yarn lint:css
+
+pre-push:
+  commands:
+    client-tests:
+      root: "client/"
+      glob: "*.{ts,tsx}"
+      run: yarn test
