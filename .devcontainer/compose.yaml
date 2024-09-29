@@ -1,4 +1,4 @@
-name: "peace_boilerplate"
+name: "rails_boilerplate"
 
 services:
   rails-app:

@@ -11,14 +11,14 @@ default: &default
 
 development:
   <<: *default
-  database: peace_boilerplate_development
+  database: rails_boilerplate_development
 
 test:
   <<: *default
-  database: peace_boilerplate_test
+  database: rails_boilerplate_test
 
 production:
   <<: *default
-  database: peace_boilerplate_production
-  username: peace_boilerplate
-  password: <%= ENV["PEACE_BOILERPLATE_DATABASE_PASSWORD"] %>
+  database: rails_boilerplate_production
+  username: rails_boilerplate
+  password: <%= ENV["RAILS_BOILERPLATE_DATABASE_PASSWORD"] %>

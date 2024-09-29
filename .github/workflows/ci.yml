@@ -64,7 +64,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      TEST_DATABASE: peace_boilerplate_test
+      TEST_DATABASE: rails_boilerplate_test
       TEST_DATABASE_USERNAME: postgres
       TEST_DATABASE_PASSWORD: postgres
       TEST_DATABASE_HOST: localhost
