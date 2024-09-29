@@ -221,7 +221,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.7)
-    pgcli-rails (0.9.0)
+    pgcli-rails (0.9.1)
       railties (>= 4.2.0)
     prism (1.0.0)
     psych (5.1.2)
