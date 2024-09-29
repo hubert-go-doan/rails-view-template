@@ -2,7 +2,7 @@
 
 RSpec.configure do |config|
   config.before(:each) do
-    # TODO:
+    # TODO: temporary disabled
     # ActionMailer::Base.deliveries.clear
   end
 end
