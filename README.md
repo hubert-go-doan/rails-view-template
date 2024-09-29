@@ -1,4 +1,4 @@
-# peace_boilerplate
+# rails_boilerplate
 
 This is a Rails 7.2 app.
 

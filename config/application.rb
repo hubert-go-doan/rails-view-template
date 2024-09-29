@@ -20,7 +20,7 @@ require 'action_cable/engine'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module PeaceBoilerplate
+module RailsBoilerplate
   class Application < Rails::Application
     config.autoload_paths << Rails.root.join('app/frontend/components')
     config.view_component.preview_paths << Rails.root.join('app/frontend/components')
