@@ -26,9 +26,9 @@ gem 'view_component-contrib', '~> 0.2.3'
 gem 'simple_form'
 
 # Tracking
-gem "stackprof"
-gem "sentry-ruby"
-gem "sentry-rails"
+gem 'stackprof'
+gem 'sentry-ruby'
+gem 'sentry-rails'
 
 group :development, :test do
   gem 'brakeman', require: false
