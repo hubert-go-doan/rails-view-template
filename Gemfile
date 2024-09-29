@@ -25,6 +25,11 @@ gem 'view_component', '~> 3.13'
 gem 'view_component-contrib', '~> 0.2.3'
 gem 'simple_form'
 
+# Tracking
+gem "stackprof"
+gem "sentry-ruby"
+gem "sentry-rails"
+
 group :development, :test do
   gem 'brakeman', require: false
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
