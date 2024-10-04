@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  include Pagy::Frontend
+
   ActionView::Base.default_form_builder = FormBuilders::DaisyFormBuilder
 
   def component(name, *, **, &)
