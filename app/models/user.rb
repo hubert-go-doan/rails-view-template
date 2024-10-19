@@ -8,9 +8,11 @@
 #  confirmed_at           :datetime
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  provider               :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  uid                    :string
 #  unconfirmed_email      :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
@@ -29,7 +31,25 @@ class User < ApplicationRecord
     :registerable,
     :recoverable,
     :rememberable,
-    :validatable
+    :validatable,
+    :omniauthable,
+    omniauth_providers: [:google_oauth2]
 
-  has_one_attached :avatar
+  # associations
+  has_one_attached :avatar do |attachable|
+    attachable.variant :thumb, resize_to_limit: [200, 200]
+  end
+
+  # validations
+  validates :avatar,
+    content_type: /\Aimage\/.*\z/,
+    size: { less_than: 10.megabytes, message: I18n.t('activerecord.errors.models.user.attributes.avatar.size', size: 10) }
+
+  def self.from_google(google_params)
+    create_with(
+      uid: google_params[:uid],
+      provider: 'google',
+      password: Devise.friendly_token[0, 20]
+    ).find_or_create_by!(email: u[:email])
+  end
 end
