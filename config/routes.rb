@@ -9,7 +9,12 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
-  devise_for :users
+  devise_for :users,
+    controllers: {
+      sessions: 'authentication/sessions',
+      registrations: 'authentication/registrations',
+      omniauth_callbacks: 'authentication/omniauth_callbacks'
+    }
 
   root 'home#index'
   get 'up' => 'rails/health#show', as: :rails_health_check

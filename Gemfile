@@ -18,6 +18,8 @@ gem 'enumerize'
 # Auth
 gem 'devise'
 gem 'rolify'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 
 # Policy
 gem 'pundit', '~> 2.4'
