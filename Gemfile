@@ -73,6 +73,7 @@ group :development do
   gem 'ruby-lsp-rails'
   gem 'web-console'
   gem 'bullet'
+  gem 'rails-mermaid_erd'
 end
 
 group :test do
