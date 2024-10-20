@@ -32,6 +32,7 @@ gem 'sidekiq-scheduler'
 
 # Seed
 gem 'seedbank'
+gem 'faker'
 
 # Front-end
 gem 'slim-rails', '~> 3.6', '>= 3.6.3'
