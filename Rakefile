@@ -20,8 +20,10 @@ task fix: %w[eslint:autocorrect stylelint:autocorrect rubocop:autocorrect_all] d
 end
 
 # Trigger run mermaid_erd after db:migrate
-Rake::Task['db:migrate'].enhance do
-  puts 'Running mermaid_erd after db:migrate...'
-  system('bundle exec rails mermaid_erd')
-  puts '>>>>>> Generated mermaid_erd done!'
+if Rails.env.development?
+  Rake::Task['db:migrate'].enhance do
+    puts 'Running mermaid_erd after db:migrate...'
+    system('bundle exec rails mermaid_erd')
+    puts '>>>>>> Generated mermaid_erd done!'
+  end
 end
