@@ -131,3 +131,11 @@ To setup a development environment (MacOS):
   ```sh
     yarn lint:fix
   ```
+
+### Config Git hooks manager
+
+- Use lefthook gem: <https://github.com/evilmartians/lefthook>
+
+  ```sh
+    bundle exec lefthook install
+  ```
