@@ -1,72 +1,133 @@
-# rails_boilerplate
+# Rails boilerplate - From Golden Owl Solutions
 
-This is a Rails 7.2 app.
+This is a Rails boilerplate use rails 7.2
 
 ## Prerequisites
 
 This project requires:
 
-- Ruby (see [.ruby-version](./.ruby-version)), preferably managed using [rbenv](https://github.com/rbenv/rbenv)
+- Ruby (see [.ruby-version](./.ruby-version)), preferably managed using [rbenv](https://github.com/rbenv/rbenv) or [asdf](https://asdf-vm.com/)
 - Node 20.9.0
 - Yarn 1.x (classic)
 - PostgreSQL must be installed and accepting connections
 
 On macOS, these [Homebrew](http://brew.sh) packages are recommended:
 
-```
-brew install rbenv
-brew install node
-brew install yarn
-brew install postgresql@16
+```sh
+  brew install rbenv
+  brew install node 20.9.0
+  brew install yarn
+  brew install postgresql@16
+  brew install redis
 ```
 
 ## Getting started
 
-### bin/setup
+## Install - setup app
 
-Run this script to install necessary dependencies and prepare the Rails app to be started for the first time.
+To setup a development environment (MacOS):
 
-```
-bin/setup
-```
+**Clone the repo**:
 
-> [!TIP]
-> The `bin/setup` script is idempotent and is designed to be run often. You should run it every time you pull code that introduces new dependencies or makes other significant changes to the project.
-
-### Run the app!
-
-Start the Rails server with this command:
-
-```
-bin/dev
+```sh
+  git clone git@github.com:GoldenOwlAsia/rails-view-template.git
 ```
 
-The app will be located at <http://localhost:3000/>.
+**Install Ruby**:
+
+  This project currently uses [Ruby 3.3.0](blob/staging/.ruby-version), which is most easily managed through a version manager like [asdf](https://asdf-vm.com/), [rbenv](https://github.com/rbenv/rbenv)
+
+**Install Nodejs**:
+
+  This project user [Node 20.9.0](https://nodejs.org/en/blog/release/v20.9.0), which is most easily managed through a version manager like [asdf](https://github.com/asdf-vm/asdf-nodejs), [rvm](https://github.com/nvm-sh/nvm)
+
+**Install Ruby gems**:
+
+- install bundle version 2.5.4 (or similar if you are using an older version on your development)
+
+  ```sh
+  gem install bundler -v 2.5.4
+  ```
+
+- bundle
+
+  ```sh
+  bundle install
+  ```
+
+**Install Yarn**.
+
+  ```sh
+    npm install -g yarn
+  ```
+
+**Install Javascript Packages**:
+  Install packages:
+
+  ```sh
+    yarn
+  ```
+
+**Set the RACK_ENV (optional)**:
+  Later steps expect a `RACK_ENV` environment variable, so define one (usually 'development'.) This can be done by exporting a value in your shell config (by adding something like `export RACK_ENV=development` to your shell configuration file - `.bashrc`, etc)
+
+**Personalise the app settings**:
+
+- Copy `config/database.yml.sample` to `config/database.yml` and customise the values as needed.
+- Copy `.env.sample` to `.env` and customise the values as needed.
+
+**Run server**:
+
+- rails server:
+
+```sh
+  rails s
+```
+
+- sidekiq
+
+```sh
+  bundle exec sidekiq
+```
+
+- Vite
+
+```sh
+  vite dev
+```
 
 ## Development
 
-Use this command to run the full suite of automated tests and lint checks:
+### ERD
 
-```
-bin/rake
-```
+- Using gem: `rails-mermaid_erd` - Its auto generate when run `rails db:migrate`
+- Can see ERD at `http://localhost:3000/erd`
 
-> [!TIP]
-> Rake allows you to run all checks in parallel with the `-m` option. This is much faster, but since the output is interleaved, it may be harder to read.
+### FE references
 
-```
-bin/rake -m
-```
+- <https://daisyui.com/components/>
+- <https://flowbite.com/#components>
 
-### Fixing lint issues
+### Rspec
 
-Some lint issues can be auto-corrected. To fix them, run:
+- Run test by:
 
-```
-bin/rake fix
-```
+  ```sh
+    bundle exec rspec
+  ```
 
-> [!WARNING]
-> A small number of Rubocop's auto-corrections are considered "unsafe" and may
-> occasionally produce incorrect results. After running `fix`, you should
-> review the changes and make sure the code still works as intended.
+- Check test coverage at `coverage/index.html`
+
+### ESLint
+
+- ESLint check:
+
+  ```sh
+    yarn lint
+  ```
+
+- ESLint check & auto fix:
+
+  ```sh
+    yarn lint:fix
+  ```
