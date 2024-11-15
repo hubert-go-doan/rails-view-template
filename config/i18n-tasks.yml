@@ -1,5 +1,5 @@
 base_locale: en
-locales: [en, vi]
+locales: [en]
 
 data:
   read:
