@@ -69,6 +69,7 @@ group :development do
   gem 'web-console'
   gem 'bullet'
   gem 'rails-mermaid_erd'
+  gem 'i18n-tasks'
 end
 
 group :test do
