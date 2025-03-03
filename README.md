@@ -35,11 +35,11 @@ To setup a development environment (MacOS):
 
 **Install Ruby**:
 
-  This project currently uses [Ruby 3.3.0](blob/staging/.ruby-version), which is most easily managed through a version manager like [asdf](https://asdf-vm.com/), [rbenv](https://github.com/rbenv/rbenv)
+This project currently uses [Ruby 3.3.0](blob/staging/.ruby-version), which is most easily managed through a version manager like [asdf](https://asdf-vm.com/), [rbenv](https://github.com/rbenv/rbenv)
 
 **Install Nodejs**:
 
-  This project user [Node 20.9.0](https://nodejs.org/en/blog/release/v20.9.0), which is most easily managed through a version manager like [asdf](https://github.com/asdf-vm/asdf-nodejs), [rvm](https://github.com/nvm-sh/nvm)
+This project user [Node 20.9.0](https://nodejs.org/en/blog/release/v20.9.0), which is most easily managed through a version manager like [asdf](https://github.com/asdf-vm/asdf-nodejs), [rvm](https://github.com/nvm-sh/nvm)
 
 **Install Ruby gems**:
 
@@ -57,19 +57,19 @@ To setup a development environment (MacOS):
 
 **Install Yarn**.
 
-  ```sh
-    npm install -g yarn
-  ```
+```sh
+  npm install -g yarn
+```
 
 **Install Javascript Packages**:
-  Install packages:
+Install packages:
 
-  ```sh
-    yarn
-  ```
+```sh
+  yarn
+```
 
 **Set the RACK_ENV (optional)**:
-  Later steps expect a `RACK_ENV` environment variable, so define one (usually 'development'.) This can be done by exporting a value in your shell config (by adding something like `export RACK_ENV=development` to your shell configuration file - `.bashrc`, etc)
+Later steps expect a `RACK_ENV` environment variable, so define one (usually 'development'.) This can be done by exporting a value in your shell config (by adding something like `export RACK_ENV=development` to your shell configuration file - `.bashrc`, etc)
 
 **Personalise the app settings**:
 
@@ -167,3 +167,111 @@ To setup a development environment (MacOS):
   ```
 
   - Can use github CLI to generate in local or create new release in github and copy changes logs from file `CHANGELOG.md`
+
+        ## Project Directory Structure
+
+- To generate the directory structure in YAML format, run the following command:
+
+  ```bash
+  rake docs:generate_yaml
+  ```
+
+- If you have not installed the tree command, you can install it by running:
+
+  ```bash
+  brew install tree
+  ```
+
+```yaml
+--- |
+  .
+  ├── CHANGELOG.md
+  ├── DEPLOYMENT.md
+  ├── Dockerfile
+  ├── Gemfile
+  ├── Gemfile.lock
+  ├── Procfile
+  ├── README.md
+  ├── Rakefile
+  ├── app
+  │   ├── channels
+  │   ├── controllers
+  │   ├── frontend
+  │   ├── helpers
+  │   ├── models
+  │   ├── policies
+  │   ├── queries
+  │   ├── services
+  │   ├── structure.txt
+  │   └── views
+  ├── bin
+  │   ├── brakeman
+  │   ├── bundle
+  │   ├── bundle-audit
+  │   ├── bundler-audit
+  │   ├── dev
+  │   ├── docker-entrypoint
+  │   ├── rails
+  │   ├── rake
+  │   ├── rspec
+  │   ├── rubocop
+  │   ├── setup
+  │   └── vite
+  ├── cliff.toml
+  ├── commitlint.config.js
+  ├── config
+  │   ├── application.rb
+  │   ├── boot.rb
+  │   ├── cable.yml
+  │   ├── credentials.yml.enc
+  │   ├── database.yml
+  │   ├── database.yml.sample
+  │   ├── environment.rb
+  │   ├── environments
+  │   ├── i18n-tasks.yml
+  │   ├── initializers
+  │   ├── locales
+  │   ├── master.key
+  │   ├── mermaid_erd.yml
+  │   ├── puma.rb
+  │   ├── routes.rb
+  │   ├── sidekiq.yml
+  │   ├── storage.rb
+  │   ├── storage.yml
+  │   └── vite.json
+  ├── config.ru
+  ├── coverage
+  │   ├── assets
+  │   └── index.html
+  ├── db
+  │   ├── migrate
+  │   ├── schema.rb
+  │   ├── seeds
+  │   └── seeds.rb
+  ├── docs
+  │   └── erd.html
+  ├── eslint.config.js
+  ├── lefthook.yml
+  ├── lib
+  │   ├── assets
+  │   ├── tasks
+  │   └── templates
+  ├── package.json
+  ├── postcss.config.cjs
+  ├── spec
+  │   ├── cassettes
+  │   ├── factories
+  │   ├── fixtures
+  │   ├── helpers
+  │   ├── i18n_spec.rb
+  │   ├── mailers
+  │   ├── models
+  │   ├── queries
+  │   ├── rails_helper.rb
+  │   ├── spec_helper.rb
+  │   ├── supports
+  │   └── views
+  ├── tailwind.config.js
+  ├── vite.config.ts
+  └── yarn.lock
+```
