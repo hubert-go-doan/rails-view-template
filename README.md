@@ -168,7 +168,7 @@ Later steps expect a `RACK_ENV` environment variable, so define one (usually 'de
 
   - Can use github CLI to generate in local or create new release in github and copy changes logs from file `CHANGELOG.md`
 
-        ## Project Directory Structure
+## Project Directory Structure
 
 - To generate the directory structure in YAML format, run the following command:
 
@@ -183,7 +183,8 @@ Later steps expect a `RACK_ENV` environment variable, so define one (usually 'de
   ```
 
 ```yaml
---- |
+---
+|
   .
   ├── CHANGELOG.md
   ├── DEPLOYMENT.md
