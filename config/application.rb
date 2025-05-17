@@ -44,11 +44,6 @@ module RailsBoilerplate
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    routes.default_url_options = {
-      host: ENV.fetch('APP_HOST', 'localhost:3000'),
-      protocol: ENV.fetch('APP_PROTOCOL', 'http')
-    }
-
     config.i18n.default_locale = :en
     config.i18n.load_path += Rails.root.glob('config/locales/**/*.{rb, yml}')
     config.i18n.fallbacks = [I18n.default_locale]
@@ -56,5 +51,11 @@ module RailsBoilerplate
     # Enable web console in browser - protected by devise
     config.web_console.development_only = false
     config.web_console.permissions = '0.0.0.0/0'
+
+    # Set default url options
+    routes.default_url_options = {
+      host: ENV.fetch('APP_HOST', 'localhost:3000'),
+      protocol: ENV.fetch('APP_PROTOCOL', 'http')
+    }
   end
 end

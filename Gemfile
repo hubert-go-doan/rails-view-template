@@ -2,6 +2,8 @@
 
 source 'https://rubygems.org'
 
+ruby '3.4.1'
+
 gem 'bootsnap', require: false
 gem 'good_migrations'
 gem 'pg', '~> 1.5'
@@ -48,7 +50,12 @@ gem 'sentry-rails'
 
 gem 'web-console'
 
+gem 'active_storage_dashboard'
+
 group :development, :test do
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'brakeman', require: false
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
   gem 'dotenv', '>= 3.0'
