@@ -1,6 +1,7 @@
 # Rails boilerplate - From Golden Owl Solutions
 
 This is a Rails boilerplate use rails 7.2
+Ruby 3.4.1
 
 ## Prerequisites
 
@@ -93,7 +94,7 @@ Later steps expect a `RACK_ENV` environment variable, so define one (usually 'de
 - Vite
 
 ```sh
-  vite dev
+  bin/vite dev
 ```
 
 ## Development
