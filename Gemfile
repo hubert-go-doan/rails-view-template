@@ -24,7 +24,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 
 # Policy
-gem 'pundit', '~> 2.4'
+gem 'pundit', '~> 2.5'
 gem 'active_storage_validations'
 
 # Job
